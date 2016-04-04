@@ -1,37 +1,25 @@
 <!DOCTYPE html>
-<html>
-
+<html lang="en-us">
   <head>
-    <meta charset='utf-8'>
-    <meta http-equiv="X-UA-Compatible" content="chrome=1">
-    <meta name="description" content="NCCR Robotics Rescue Grand Challenge - Wireless Networking  : ">
-
-    <link rel="stylesheet" type="text/css" media="screen" href="stylesheets/stylesheet.css">
-
-    <title>NCCR Robotics Rescue Grand Challenge - Wireless Networking </title>
+    <meta charset="UTF-8">
+    <title>NCCR Robotics Rescue Grand Challenge - Wireless Networking  by EduardoFF</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" href="stylesheets/normalize.css" media="screen">
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,700' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" type="text/css" href="stylesheets/stylesheet.css" media="screen">
+    <link rel="stylesheet" type="text/css" href="stylesheets/github-light.css" media="screen">
   </head>
-
   <body>
+    <section class="page-header">
+      <h1 class="project-name">NCCR Robotics Rescue Grand Challenge - Wireless Networking </h1>
+      <h2 class="project-tagline"></h2>
+      <a href="https://github.com/EduardoFF/nccr_rgc_comm" class="btn">View on GitHub</a>
+      <a href="https://github.com/EduardoFF/nccr_rgc_comm/zipball/master" class="btn">Download .zip</a>
+      <a href="https://github.com/EduardoFF/nccr_rgc_comm/tarball/master" class="btn">Download .tar.gz</a>
+    </section>
 
-    <!-- HEADER -->
-    <div id="header_wrap" class="outer">
-        <header class="inner">
-          <a id="forkme_banner" href="https://github.com/EduardoFF/nccr_rgc_comm">View on GitHub</a>
-
-          <h1 id="project_title">NCCR Robotics Rescue Grand Challenge - Wireless Networking </h1>
-          <h2 id="project_tagline"></h2>
-
-            <section id="downloads">
-              <a class="zip_download_link" href="https://github.com/EduardoFF/nccr_rgc_comm/zipball/master">Download this project as a .zip file</a>
-              <a class="tar_download_link" href="https://github.com/EduardoFF/nccr_rgc_comm/tarball/master">Download this project as a tar.gz file</a>
-            </section>
-        </header>
-    </div>
-
-    <!-- MAIN CONTENT -->
-    <div id="main_content_wrap" class="outer">
-      <section id="main_content" class="inner">
-        <h1>
+    <section class="main-content">
+      <h1>
 <a id="introduction" class="anchor" href="#introduction" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Introduction</h1>
 
 <p>The purpose of this document is to describe the framework that is used to build and maintain a multi-hop wireless network infrastructure for the NCCR Grand Challenge on Rescue Robotics.</p>
@@ -45,18 +33,52 @@
 <li>TP-LINK TL-WN722N</li>
 <li>Camera, GPS Dongle (optional)</li>
 </ul>
-      </section>
-    </div>
 
-    <!-- FOOTER  -->
-    <div id="footer_wrap" class="outer">
-      <footer class="inner">
-        <p class="copyright">NCCR Robotics Rescue Grand Challenge - Wireless Networking  maintained by <a href="https://github.com/EduardoFF">EduardoFF</a></p>
-        <p>Published with <a href="https://pages.github.com">GitHub Pages</a></p>
+<h1>
+<a id="making-a-bridge-node" class="anchor" href="#making-a-bridge-node" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Making a "bridge node"</h1>
+
+<h2>
+<a id="installing-dependencies" class="anchor" href="#installing-dependencies" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Installing dependencies</h2>
+
+<h3>
+<a id="lcm" class="anchor" href="#lcm" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>LCM:</h3>
+
+<ul>
+<li><a href="https://github.com/lcm-proj/lcm/releases/download/v1.3.1/lcm-1.3.1.zip">https://github.com/lcm-proj/lcm/releases/download/v1.3.1/lcm-1.3.1.zip</a></li>
+</ul>
+
+<h3>
+<a id="click" class="anchor" href="#click" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Click:</h3>
+
+<ul>
+<li>git clone <a href="https://github.com/EduardoFF/click.git">https://github.com/EduardoFF/click.git</a>
+</li>
+<li>cd click</li>
+<li>./configure</li>
+<li>make -C ./userlevel MINDRIVER=RNP_BRIDGE_PKG</li>
+</ul>
+
+<h3>
+<a id="xbee-bridge" class="anchor" href="#xbee-bridge" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>XBee bridge:</h3>
+
+<ul>
+<li>git clone <a href="https://github.com/EduardoFF/rnp_xbee_bridge.git">https://github.com/EduardoFF/rnp_xbee_bridge.git</a>
+</li>
+<li>cd rnp_xbee_bridge</li>
+<li>mkdir build</li>
+<li>cd build</li>
+<li>cmake ../src</li>
+<li>make end_node</li>
+</ul>
+
+      <footer class="site-footer">
+        <span class="site-footer-owner"><a href="https://github.com/EduardoFF/nccr_rgc_comm">NCCR Robotics Rescue Grand Challenge - Wireless Networking </a> is maintained by <a href="https://github.com/EduardoFF">EduardoFF</a>.</span>
+
+        <span class="site-footer-credits">This page was generated by <a href="https://pages.github.com">GitHub Pages</a> using the <a href="https://github.com/jasonlong/cayman-theme">Cayman theme</a> by <a href="https://twitter.com/jasonlong">Jason Long</a>.</span>
       </footer>
-    </div>
 
-    
+    </section>
 
+  
   </body>
 </html>
