@@ -94,6 +94,23 @@
 <li>make end_node</li>
 </ul>
 
+<h3>
+<a id="testing" class="anchor" href="#testing" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Testing:</h3>
+
+<h2>
+<a id="link-between-nodes" class="anchor" href="#link-between-nodes" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>link between nodes</h2>
+
+<h1>
+<a id="setup-the-adhoc-network" class="anchor" href="#setup-the-adhoc-network" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Setup the adhoc network</h1>
+
+<ul>
+<li>connect the wifi dongle and identify the interface name (e.g., wlan1)</li>
+<li>setup the network interfaces in adhoc mode. Use the setup_adhoc.sh script in click/scripts</li>
+<li>choose an IP address (e.g., 10.42.43.10/24), channel (3), transmit power (20dBm)</li>
+<li>run the script: sudo bash setup_adhoc.sh wlan1 10.42.43.10/24 3 20</li>
+<li>repeat the procedure for the other node, but choose a different IP address</li>
+</ul>
+
       <footer class="site-footer">
         <span class="site-footer-owner"><a href="https://github.com/EduardoFF/nccr_rgc_comm">NCCR Robotics Rescue Grand Challenge - Wireless Networking </a> is maintained by <a href="https://github.com/EduardoFF">EduardoFF</a>.</span>
 
