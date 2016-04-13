@@ -35,6 +35,30 @@
 </ul>
 
 <h1>
+<a id="installation-using-docker" class="anchor" href="#installation-using-docker" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Installation using docker</h1>
+
+<ul>
+<li>Install docker:
+sudo apt-get install lxc aufs-tools cgroup-lite apparmor docker.io</li>
+<li>check that docker runs:
+sudo docker info
+Containers: 0
+Images: 0
+Storage Driver: aufs
+ Root Dir: /var/lib/docker/aufs
+ Backing Filesystem: extfs
+ Dirs: 0
+ Dirperm1 Supported: false
+ Execution Driver: native-0.2
+ Kernel Version: 3.8.13.28
+ Operating System: Ubuntu 14.04.2 LTS
+ CPUs: 4
+Total Memory: 1.976 GiB
+Name: my-odroid-name
+ID: G4RD:VWPC:RNEZ:LGE3:44UZ:S7OF:AKFI:QBY6:FS4N:CHS2:PETD:NX4O</li>
+</ul>
+
+<h1>
 <a id="making-a-bridge-node" class="anchor" href="#making-a-bridge-node" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Making a "bridge node"</h1>
 
 <h2>
