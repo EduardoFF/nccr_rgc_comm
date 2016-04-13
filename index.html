@@ -35,7 +35,7 @@
 </ul>
 
 <h1>
-<a id="installation-using-docker" class="anchor" href="#installation-using-docker" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Installation using docker</h1>
+<a id="installation-on-odroid-using-docker" class="anchor" href="#installation-on-odroid-using-docker" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Installation on ODROID using docker</h1>
 
 <ul>
 <li>
@@ -54,6 +54,46 @@
 <p><code>sudo docker build --no-cache -t nccr_manet https://github.com/EduardoFF/nccr_rgc_manet.git</code>
 <code>...</code>
 <code>Successfully built ...</code></p>
+
+<h1>
+<a id="installation-on-pc-using-docker" class="anchor" href="#installation-on-pc-using-docker" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Installation on PC using docker</h1>
+
+<ul>
+<li><p>Install docker according to the instructions for your linux distribution</p></li>
+<li>
+<p>check that docker runs (you must have internet connection):</p>
+
+<p><code>$ sudo docker run debian:latest /bin/echo 'Hello world'</code></p>
+</li>
+<li><p>build the container:</p></li>
+</ul>
+
+<p><code>sudo docker build --no-cache -t nccr_manet https://github.com/EduardoFF/nccr_rgc_manet.git#:x86_64</code></p>
+
+<h1>
+<a id="testing" class="anchor" href="#testing" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Testing:</h1>
+
+<p>On ODROID,</p>
+
+<ul>
+<li><p>make directory for logs, e.g. ~/manet_logs </p></li>
+<li><p>start the manet with the container:</p></li>
+</ul>
+
+<p><code>sudo docker run --rm -it --privileged --net="host" -v ~/manet_logs:/logs nccr_manet setup_manet -i wlan0 -n 2 -r /root/default.routes</code></p>
+
+<p>replace wlan0 by the network interface corresponding to the wireless dongle.</p>
+
+<p>-n 2 assigns the node id.</p>
+
+<p>On PC,</p>
+
+<ul>
+<li><p>make directory for logs, e.g., ~/manet_logs</p></li>
+<li><p>start the manet with the container:</p></li>
+</ul>
+
+<p><code>sudo docker run --rm -it --privileged --net="host" -v ~/manet_logs:/logs nccr_manet setup_manet -i wlan0 -n 1 -r /root/default.routes</code></p>
 
 <h1>
 <a id="making-a-bridge-node" class="anchor" href="#making-a-bridge-node" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Making a "bridge node"</h1>
@@ -119,7 +159,7 @@
 </ul>
 
 <h1>
-<a id="testing" class="anchor" href="#testing" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Testing:</h1>
+<a id="testing-1" class="anchor" href="#testing-1" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Testing:</h1>
 
 <h2>
 <a id="link-between-nodes" class="anchor" href="#link-between-nodes" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>link between nodes</h2>
